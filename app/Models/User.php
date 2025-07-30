@@ -10,16 +10,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'clas_id',
-        'photo',
-        'nisn',
-        'alamat',
-        'no_handphone',
-    ];
+    // Nama tabel
+    protected $guarded = [];
 
     protected $hidden = [
         'password',
@@ -34,9 +26,9 @@ class User extends Authenticatable
         ];
     }
 
-    // Relasi ke tabel classes
-    public function class()
+    // Relasi ke tabel clases
+    public function clas()
     {
-        return $this->belongsTo(Classes::class, 'clas_id');
+        return $this->belongsTo(Clas::class, 'clas_id');
     }
 }

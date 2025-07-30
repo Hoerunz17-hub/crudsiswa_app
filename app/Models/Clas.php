@@ -13,7 +13,7 @@ class Clas extends Model
     protected $guarded = [];
 
     //relasi ke tabel users
-    public function users(){
+    public function user(){
         return $this->hasMany(User::class, 'clas_id');
     }
 

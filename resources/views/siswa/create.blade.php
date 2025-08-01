@@ -13,14 +13,15 @@
     <hr>
     <a href="/">Kembali</a>
     <br>
-    <form action="" method="POST">
+    <form action="/siswa/store" method="POST">
+        @csrf
        <div>
           <label for="">Kelas</label>
           <br>
           <select name="kelas_id">
-            <option value="XII">XII PPLG-1</option>
-            <option value="XII">XII PPLG-2</option>
-            <option value="XII">XII PPLG-3</option>
+            <option value="1">XII PPLG-1</option>
+            <option value="2">XII PPLG-2</option>
+            <option value="3">XII PPLG-3</option>
           </select>
         </div>
         <br>
@@ -63,7 +64,7 @@
         <div>
           <label for="">No Handphone</label>
           <br>
-          <input type="number" name="no_handphone" placeholder="Masukkan no handphone">
+          <input type="tel" name="no_handphone" placeholder="Masukkan no handphone">
         </div>
         <br>
 

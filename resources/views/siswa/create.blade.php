@@ -15,15 +15,17 @@
     <hr>
     <a href="/">Kembali</a>
     <br>
-    <form action="/siswa/store" method="POST">
+    <form action="/siswa/store" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="">Kelas</label>
             <br>
             <select name="kelas_id">
-                <option value="1">XII PPLG-1</option>
-                <option value="2">XII PPLG-2</option>
-                <option value="3">XII PPLG-3</option>
+
+                @foreach ($clases as $clas)
+                    <option value="{{ $clas->id }}">{{ $clas->name }}</option>
+                @endforeach
+
             </select><br>
             @error('kelas_id')
                 <small><span style="color: red;">{{ $message }}</span></small>
@@ -34,10 +36,12 @@
         <div>
             <label for="">Nama</label>
             <br>
+
             <input type="text" name="name" placeholder="Masukkan nama siswa"><br>
             @error('name')
                 <small><span style="color: red;">{{ $message }}</span></small>
             @enderror
+
         </div>
         <br>
 
@@ -96,6 +100,9 @@
             <label for="">Foto</label>
             <br>
             <input type="file" name="foto" placeholder="Masukkan Photo">
+            @error('foto')
+                <small><span style="color: red;">{{ $message }}</span></small>
+            @enderror
         </div>
         <br>
 

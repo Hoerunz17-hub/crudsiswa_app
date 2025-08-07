@@ -13,7 +13,7 @@
     <hr>
     <a href="/siswa/create">Tambah siswa</a>
 
-    <table border="1" cellpadding="10" cellspacing="0">
+    <table border="10" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
                 <th>NO</th>
@@ -26,6 +26,13 @@
             </tr>
         </thead>
         <tbody>
+            @if ($siswas->isEmpty())
+                <tr>
+                    <td colspan="7" style="color:red; text-align: center;">
+                        Tidak ada data siswa
+                    </td>
+                </tr>
+            @endif
             @foreach ($siswas as $siswa)
                 <tr>
                     <td>{{ $siswa->id }}</td>
@@ -37,7 +44,7 @@
                         <img src="{{ asset('storage/' . $siswa->photo) }}" alt="Photo Siswa" width="80">
                     </td>
                     <td>
-                        <a href="">DELETE</a>
+                        <a onclick="return confirm('apa iyakkk?')" href="/siswa/delete/{{ $siswa->id }}">DELETE</a>
                         <a href="">EDIT</a>
                         <a href="">DETAIL</a>
                     </td>

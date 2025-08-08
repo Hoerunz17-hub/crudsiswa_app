@@ -86,4 +86,21 @@ class SiswaController extends Controller
         return redirect('/')->with('success', 'Data siswa berhasil dihapus');
 
     }
+
+    //untuk menampilkan view detai siswa
+    public function show($id){
+        //cari table user didatabase berdasarkan id user
+        $datauser = User::find($id);
+
+
+        //cek apakah data siswa ada atau tidak
+        if($datauser == null){
+            return redirect('/')->with('error', 'Data siswa tidak ditemukan');
+        }
+
+        //kembalikan user ke halaman show dan kirimkan data user yang diambil berdasarkan id
+
+
+        return view('siswa.show', compact('datauser'));
+    }
 }

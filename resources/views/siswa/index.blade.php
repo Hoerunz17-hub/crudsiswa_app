@@ -46,7 +46,7 @@
                     <td>
                         <a onclick="return confirm('apa iyakkk?')" href="/siswa/delete/{{ $siswa->id }}">DELETE</a>
                         <a href="">EDIT</a>
-                        <a href="">DETAIL</a>
+                        <a href="/siswa/show/{{ $siswa->id }}">DETAIL</a>
                     </td>
 
                 </tr>

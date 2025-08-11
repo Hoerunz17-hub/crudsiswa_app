@@ -87,7 +87,7 @@ class SiswaController extends Controller
 
     }
 
-    //untuk menampilkan view detai siswa
+    //untuk menampilkan view detail siswa
     public function show($id){
         //cari table user didatabase berdasarkan id user
         $datauser = User::find($id);
@@ -102,5 +102,23 @@ class SiswaController extends Controller
 
 
         return view('siswa.show', compact('datauser'));
+    }
+
+    public function edit($id){
+         //SIAPKAN DATA / PANGGIL DATA
+        $clases = Clas::all();
+
+        //amil data siswa berdasarkan id
+        $datauser = User::find($id);
+
+        if($datauser == null){
+            return redirect('/')->with('error', 'Data siswa tidak ditemukan');
+        }
+
+
+        //kembalikan user ke halaman edit
+        return view('siswa.edit', compact('clases','datauser'));
+
+
     }
 }

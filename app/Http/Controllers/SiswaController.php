@@ -121,4 +121,52 @@ class SiswaController extends Controller
 
 
     }
+
+    public function update(Request $request, $id){
+        //validasi data
+         $request->validate([
+            'name'          => 'required',
+            'nisn'          => 'required',
+            'alamat'        => 'required',
+            'email'         => 'required',
+            'no_handphone'  => 'required',
+
+        ]);
+
+        //cari didalam table user apakah ada user yang akan diupdate berdasarkan id
+        $datasiswa = User::find($id);
+
+
+
+
+        //siapkan data yang disimpan sebagai update
+         $datasiswa_update = [
+            'clas_id'       =>$request->kelas_id,
+            'name'          =>$request->name,
+            'nisn'          =>$request->nisn,
+            'alamat'        =>$request->alamat,
+            'email'         =>$request->email,
+            'no_handphone'  =>$request->no_handphone
+        ];
+
+
+
+        //cek apakah user merubah password atau tidak
+
+
+
+        //cek apakah user merubah foto atau tidak
+
+
+
+        //simpan data kedalam database dengan data yang terbaru sesuai upadate
+        $datasiswa->update($datasiswa_update);
+
+
+
+        //pindahkan user ke halaman index
+        return redirect('/')->with('success', 'Data siswa berhasil diupdate');
+
+
+    }
 }

@@ -24,7 +24,7 @@ class SiswaController extends Controller
     public function create(){
 
         //SIAPKAN DATA / PANGGIL DATA
-        $clases = Clas::all();
+        $clases = Clas::where('status', 'active')->get();
 
         return view('siswa.create', compact('clases'));
     }

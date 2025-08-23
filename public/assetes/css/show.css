@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(94, 201, 183);
+    text-align: center;
+}
+
+/* --- Animasi Muncul untuk Semua Konten --- */
+body > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+h1 {
+    animation-delay: 0s;
+}
+
+.detail-card {
+    animation-delay: 0.5s;
+}
+
+.btn-back {
+    animation-delay: 1.5s;
+}
+
+/* --- Detail Page Styling --- */
+.detail-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.detail-card h3 span {
+    font-weight: 400;
+    color: #4a5568;
+}
+
+/* Back button dengan efek hover terpisah */
+.btn-back {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #4c51bf;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+
+    /* Transisi untuk efek hover */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-back:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(76, 81, 191, 0.3);
+    background-color: #3b3f96; /* Warna sedikit lebih gelap saat hover */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

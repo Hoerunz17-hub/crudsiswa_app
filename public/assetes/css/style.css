@@ -6,6 +6,15 @@ body {
     padding: 20px;
 }
 
+h1,
+.card {
+    /* Animasi muncul dari bawah dan fade-in */
+    animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
 .card {
     background: #fff;
     border-radius: 10px;
@@ -18,13 +27,9 @@ body {
 .card img {
     width: 100%;
     max-width: 200px;
-    /* batas maksimal */
     height: auto;
-    /* biar proporsi asli terjaga */
     object-fit: cover;
-    /* jaga proporsi isi */
     border-radius: 8px;
-    /* sedikit melengkung di sudut */
     margin-bottom: 15px;
     border: 2px solid #ddd;
 }
@@ -52,8 +57,35 @@ h1 {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+
+    /* Transisi untuk efek hover yang halus */
+    transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-back:hover {
     background-color: #0056b3;
+
+    /* Efek sedikit membesar saat di-hover */
+    transform: scale(1.05);
+}
+
+/* Keyframes untuk animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes untuk animasi slide-up */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }

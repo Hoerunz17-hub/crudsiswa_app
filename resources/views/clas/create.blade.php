@@ -1,41 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+@section('title', 'Halaman Tambah Kelas')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Halaman tambah kelas</title>
-</head>
+    <link rel="stylesheet" href="{{ asset('assetes/css/buat.css') }}">
 
-<body>
-    <h1>Halaman Tambah Kelas</h1>
-    <b>Form Tambah Kelas</b>
-    <br>
-    <a href="/clas">Kembali</a>
-    <br>
-    <form action="/clas/store" method="POST">
-        @csrf
-        <div>
-            <label for="">Nama Kelas</label>
-            <br>
-            <input type="text" name="name" placeholder="Masukkan nama kelas"><br>
-            @error('name')
-                <small><span style="color: red;">{{ $message }}</span></small>
-            @enderror
-        </div>
-        <div>
-            <label for="">deskripsi</label>
-            <br>
-            <input type="text" name="description"><br>
-            @error('description')
-                <small><span style="color: red;">{{ $message }}</span></small>
-            @enderror
-        </div>
-        <br>
-        <button type="submit">Simpan</button>
-        <button type="reset">Reset</button>
-    </form>
-</body>
+    <div class="form-container">
+        <h1>Halaman Tambah Kelas</h1>
+        <b>Form Tambah Kelas</b>
+        <hr>
+        <a href="/clas" class="back-link">Kembali</a>
 
-</html>
+        <form action="/clas/store" method="POST">
+            @csrf
+
+            <div class="form-group">
+                <label for="name">Nama Kelas</label>
+                <input type="text" name="name" id="name" placeholder="Masukkan nama kelas">
+                @error('name')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="description">Deskripsi</label>
+                <input type="text" name="description" id="description" placeholder="Masukkan deskripsi kelas">
+                @error('description')
+                    <p class="error-message">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit">Simpan</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+@endsection

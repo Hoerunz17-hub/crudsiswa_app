@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+.edit-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px; /* Ukuran kontainer lebih besar */
+    margin: 40px auto;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+
+    /* Animasi muncul */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.form-title {
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #5a7d9a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #3f5e78;
+}
+
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dua kolom yang sama */
+    gap: 20px; /* Jarak antar elemen */
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 0; /* Hapus margin agar gap berfungsi */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f8f8f8;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #5a7d9a;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(90, 125, 154, 0.2);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #dc3545;
+    font-size: 0.85rem;
+}
+
+/* Penyesuaian untuk input file */
+.form-group input[type="file"] {
+    padding: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.submit-btn,
+.reset-btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.submit-btn {
+    background-color: #4682b4;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #3b6b94;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(70, 130, 180, 0.3);
+}
+
+.reset-btn {
+    background-color: #ff6347;
+    color: white;
+}
+
+.reset-btn:hover {
+    background-color: #e5533d;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

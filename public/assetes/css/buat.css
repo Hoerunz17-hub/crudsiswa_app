@@ -43,11 +43,7 @@
     margin-bottom: 0.5rem;
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"],
-.form-group input[type="tel"],
-.form-group input[type="file"],
-.form-group select {
+.form-group input[type="text"] {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #cbd5e0;
@@ -57,10 +53,7 @@
     box-sizing: border-box; /* Ensures padding doesn't affect total width */
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="password"]:focus,
-.form-group input[type="tel"]:focus,
-.form-group select:focus {
+.form-group input[type="text"]:focus {
     outline: none;
     border-color: #4c51bf;
     box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.2);
@@ -123,7 +116,6 @@
 .back-link:hover {
     transform: translateX(-5px);
 }
-
 /* Animations */
 @keyframes fadeIn {
     from {

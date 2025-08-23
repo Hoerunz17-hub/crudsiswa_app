@@ -1,41 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+@section('title', 'Halaman Edit Kelas')
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assetes/css/ngedit.css') }}">
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Halaman tambah kelas</title>
-</head>
+    <div class="edit-container">
+        <h1>Halaman Edit Kelas</h1>
+        <span class="form-title">Formulir untuk memperbarui data kelas.</span>
 
-<body>
-    <h1>Halaman Tambah Kelas</h1>
-    <b>Form Tambah Kelas</b>
-    <br>
-    <a href="/clas">Kembali</a>
-    <br>
-    <form action="/clas/update/{{ $datakelas->id }}" method="POST">
-        @csrf
-        <div>
-            <label for="">Nama Kelas</label>
-            <br>
-            <input type="text" name="name" placeholder="Masukkan nama kelas" value="{{ $datakelas->name }}"><br>
-            @error('name')
-                <small><span style="color: red;">{{ $message }}</span></small>
-            @enderror
-        </div>
-        <div>
-            <label for="">deskripsi</label>
-            <br>
-            <input type="text" name="description" value="{{ $datakelas->description }}"><br>
-            @error('description')
-                <small><span style="color: red;">{{ $message }}</span></small>
-            @enderror
-        </div>
-        <br>
-        <button type="submit">Simpan</button>
-        <button type="reset">Reset</button>
-    </form>
-</body>
+        <a href="/clas" class="back-link">← Kembali</a>
 
-</html>
+        <form action="/clas/update/{{ $datakelas->id }}" method="POST">
+            @csrf
+
+            <div class="form-group">
+                <label for="name">Nama Kelas</label>
+                <input type="text" name="name" placeholder="Masukkan nama kelas" value="{{ $datakelas->name }}">
+                @error('name')
+                    <small>{{ $message }}</small>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="description">Deskripsi</label>
+                <input type="text" name="description" placeholder="Masukkan deskripsi"
+                    value="{{ $datakelas->description }}">
+                @error('description')
+                    <small>{{ $message }}</small>
+                @enderror
+            </div>
+
+            <div class="button-container">
+                <button type="reset" class="reset-btn">Reset</button>
+                <button type="submit" class="submit-btn">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+@endsection

@@ -1,0 +1,166 @@
+/* General body and container styling */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #eef1f6;
+    color: #4a5568;
+    padding: 2rem;
+    line-height: 1.6;
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+/* Update .table-wrapper in style.css */
+.table-wrapper {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+/* Page titles */
+h1,
+h3 {
+    color: #2d3748;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 1.5rem;
+}
+
+/* Add class button */
+.add-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(45deg, #10b981, #059669);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.add-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* --- Table Styling with Enhanced Animations --- */
+
+/* Modern table base */
+.modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    font-size: 1.1rem;
+}
+
+.modern-table thead tr {
+    background-color: #4a5568;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.modern-table th {
+    padding: 1.25rem 2rem;
+    text-align: left;
+    &:first-child {
+        border-top-left-radius: 8px;
+    }
+    &:last-child {
+        border-top-right-radius: 8px;
+    }
+}
+
+.modern-table td {
+    padding: 1.25rem 2rem;
+    text-align: left;
+    background-color: #ffffff;
+    border: none;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modern-table tbody tr {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover effect on table rows */
+.modern-table tbody tr:hover {
+    transform: translateY(-5px) scale(1.01); /* Menambahkan efek membesar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Rounded corners for the rows on hover */
+.modern-table tbody tr:hover td:first-child {
+    border-bottom-left-radius: 8px;
+}
+.modern-table tbody tr:hover td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+/* Option links styling */
+.options-links a {
+    color: #4c51bf;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.options-links a:hover {
+    color: #312e81;
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+.options-links a.delete {
+    color: #e53e3e;
+}
+
+.options-links a.delete:hover {
+    color: #c53030;
+}
+
+/* No data message */
+.no-data {
+    text-align: center;
+    color: #e53e3e;
+    font-weight: 600;
+    padding: 2rem;
+}
+
+/* --- Animations for page load --- */
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buat kelas helper untuk animasi */
+.animate-slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
